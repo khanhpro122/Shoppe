@@ -1,0 +1,116 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#ee4d2d;
+
+    --height-header:120px;
+    --height-nav:33px;
+    --height-header-search:calc(var(--height-header) - var(--height-nav));
+    --height-soft-bars:46px;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid__row{
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid__col-2{
+    width: 16.6667%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.grid__col-2-4{
+    width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+.grid__col-10{
+    width: 83.3334%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+@keyframes Allhighlight{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes grow{
+    from{
+        transform: scale(var(--grow-from));
+    }
+    to{
+        transform: scale(var(--grow-to));
+    }
+}
+/* modal */
+.modal{
+    --grow-from:0.6;
+    --grow-to:1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    background-color: rgba(0,0,0,0.3);
+    animation: Allhighlight linear 0.2s;
+    display: none;
+}
+.modal__overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+}
+.modal__body{
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    background-color: #fff;
+    border-radius: 5px;
+    animation: grow linear 0.1s;
+}
+.btn-disabled{
+    cursor: default;
+    background-color:#c3c3c3 ;
+    color: #949494;
+}
+.narigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.narigation__list{
+    list-style: none;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 4px;
+    border-radius: 2px;
+}
+.narigation__items{
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #888;
+}
+.narigation__list-active{
+    background-color: var(--primary-color);
+}
+.narigation__list-active a{
+    color: var(--white-color);
+}
